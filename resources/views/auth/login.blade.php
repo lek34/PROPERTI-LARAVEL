@@ -60,12 +60,17 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
+                    @if(session()->has('flash_message'))
+                        <div class="alert alert-danger">
+                            {{ session()->get('flash_message') }}
+                        </div>
+                    @endif
                     <h5 class="card-title text-center pb-0 fs-4">Login</h5>
-                    <p class="text-center small">Enter your username & password to login</p>
+                    <p class="text-center small">Enter your username</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-
+                  <form method="POST" action="{{route('login.perform')}}" class="row g-3 needs-validation" novalidate>
+                    @csrf
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">

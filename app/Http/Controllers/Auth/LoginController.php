@@ -26,20 +26,26 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function login(LoginRequest $request)
+    public function login(Request $request)
     {
-        $credentials = $request->getCredentials();
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
 
-        if(!Auth::validate($credentials)):
+        $credentials = $request->only('username', 'password');
+
+        if (!Auth::validate($credentials)) :
             return redirect()->to('login')
-                ->withErrors(trans('auth.failed'));
+                ->withErrors(trans('auth.failed'))
+                ->with('flash_message', 'Invalid username or password.');
         endif;
 
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
         Auth::login($user);
 
-        return $this->authenticated($request, $user);
+        return redirect()->intended('/'); // Replace '/home' with your intended route
     }
 
     /**
@@ -52,6 +58,6 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        return redirect()->intended();
+        return redirect()->intended('welcome');
     }
 }
