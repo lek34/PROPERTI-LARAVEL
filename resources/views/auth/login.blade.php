@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+  <title>Login | GPA</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="NiceAdmin/assets/img/favicon.png" rel="icon">
-  <link href="NiceAdmin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+ <link href="NiceAdmin/assets/img/gpa.ico" rel="icon">
+ <link href="NiceAdmin/assets/img/gpa.ico" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -50,7 +50,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="NiceAdmin/assets/img/logo.png" alt="">
+                  <img src="NiceAdmin/assets/img/gpa.ico" alt="">
                   <span class="d-none d-lg-block">GPA</span>
                 </a>
               </div><!-- End Logo -->
